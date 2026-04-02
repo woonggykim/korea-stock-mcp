@@ -13,7 +13,8 @@ Initial implementation includes:
 - source adapters and typed models
 - identifier resolution and data normalization
 - MCP tools for profile, price history, disclosures, financial metrics, comparison, and screening
-- mock mode for local development without credentials
+- live integrations for Open DART and data.go.kr with mock fallback for local development
+- a KRX adapter scaffold for future approved endpoint wiring
 
 ## Quick start
 
@@ -23,3 +24,15 @@ source .venv/bin/activate
 pip install -e .
 python -m korea_stock_mcp
 ```
+
+## Environment
+
+Set the credentials you have available:
+
+```bash
+export OPEN_DART_API_KEY=...
+export PUBLIC_DATA_API_KEY=...
+export KOREA_STOCK_MCP_USE_MOCK_DATA=0
+```
+
+`KOREA_STOCK_MCP_USE_MOCK_DATA=1` remains useful when you want deterministic local responses without network access.

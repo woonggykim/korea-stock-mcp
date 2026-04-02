@@ -64,6 +64,9 @@ class KoreaStockService:
         return await self.dart.get_recent_disclosures(ticker, limit)
 
     async def get_market_snapshot(self, market: str) -> MarketSnapshot | None:
+        snapshot = await self.publicdata.get_market_snapshot(market.upper())
+        if snapshot:
+            return snapshot
         return MOCK_MARKET_SNAPSHOTS.get(market.upper())
 
     async def compare_stocks(self, tickers: list[str]) -> StockComparison:
