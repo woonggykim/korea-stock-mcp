@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "korea-stock-mcp"
+version = "0.1.0"
+description = "MCP server for Korean stock research using KRX, Open DART, and data.go.kr"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "httpx>=0.27.0",
+  "mcp>=1.9.0",
+  "pydantic>=2.7.0",
+]
+
+[project.scripts]
+korea-stock-mcp = "korea_stock_mcp.__main__:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
