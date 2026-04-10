@@ -32,7 +32,8 @@ Set the credentials you have available:
 ```bash
 export OPEN_DART_API_KEY=...
 export PUBLIC_DATA_API_KEY=...
+export PUBLIC_DATA_FINANCIAL_API_BASE_URL=https://apis.data.go.kr/1160100/service/GetFinaStatInfoService_V2
 export KOREA_STOCK_MCP_USE_MOCK_DATA=0
 ```
 
-`KOREA_STOCK_MCP_USE_MOCK_DATA=1` remains useful when you want deterministic local responses without network access.
+Live data is the default. Set `KOREA_STOCK_MCP_USE_MOCK_DATA=1` when you want deterministic local responses without network access.

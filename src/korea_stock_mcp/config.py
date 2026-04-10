@@ -15,7 +15,11 @@ class Settings:
     public_data_api_base_url: str = os.getenv("PUBLIC_DATA_API_BASE_URL", "https://apis.data.go.kr/1160100/service")
     cache_url: str | None = os.getenv("KOREA_STOCK_MCP_CACHE_URL")
     db_url: str | None = os.getenv("KOREA_STOCK_MCP_DB_URL")
-    use_mock_data: bool = os.getenv("KOREA_STOCK_MCP_USE_MOCK_DATA", "1") == "1"
+    public_data_listed_api_base_url: str = os.getenv("PUBLIC_DATA_LISTED_API_BASE_URL", "https://apis.data.go.kr/1160100/service")
+    public_data_financial_api_base_url: str = os.getenv(
+        "PUBLIC_DATA_FINANCIAL_API_BASE_URL", "https://apis.data.go.kr/1160100/service/GetFinaStatInfoService_V2"
+    )
+    use_mock_data: bool = os.getenv("KOREA_STOCK_MCP_USE_MOCK_DATA", "0") == "1"
 
 
 def load_settings() -> Settings:
